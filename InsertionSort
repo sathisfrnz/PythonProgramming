@@ -1,0 +1,29 @@
+import datetime
+#Insertion Sort
+in_lst = [10,9,10,11,14,15,2,6,5,8,9,2,4,3,1,10,9,10,11,14,15,2,6,5,8,9,2,4,3,1,10,9,10,11,14,15,2,6,5,8,9,2,4,3,1,10,9,10,11,14,15,2,6,5,8,9,2,4,3,1]
+#in_lst=[9,8,7,6,5,4,3,2,1]
+#in_lst=[2,1,2,4,3,6,5,7,1,2,9]
+#in_lst= [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+
+start=datetime.datetime.now()
+l=len(in_lst)
+print("started", start)
+
+for i in range(1,l):
+    curr_idx=i
+    j=i-1
+#    print("*",curr_idx,j,in_lst)
+# Check and swap the adjacent values in sorted order while not in sorted order
+    while in_lst[curr_idx]<in_lst[j]:
+        in_lst[curr_idx], in_lst[j] = in_lst[j], in_lst[curr_idx]
+#        print(curr_idx, j, in_lst)
+        curr_idx=j
+        if (j >0):
+            j-=1
+        else:
+            j=0
+
+complete= datetime.datetime.now()
+print("Completed",complete)
+print( "Insertion Sorted result", in_lst)
+print ("# of elements :",l, " and time taken " , complete - start)
