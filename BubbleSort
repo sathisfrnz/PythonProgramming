@@ -1,0 +1,29 @@
+#Bubble Sort
+
+import datetime
+in_lst = [10,9,10,11,14,15,2,6,5,8,9,2,4,3,1,10,9,10,11,14,15,2,6,5,8,9,2,4,3,1,10,9,10,11,14,15,2,6,5,8,9,2,4,3,1,10,9,10,11,14,15,2,6,5,8,9,2,4,3,1]
+#in_lst= [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+
+start=datetime.datetime.now()
+l=len(in_lst)
+print("started", start)
+test_loop_cnt=0
+sort_in_progress=True
+# Stop processing if no swaps happened rather than looping N*N
+while sort_in_progress:
+    swapped=False
+    test_loop_cnt +=1
+    for i in range(1,l):
+        if ( in_lst[i-1] > in_lst[i] ):
+            in_lst[i-1], in_lst[i] = in_lst[i], in_lst[i-1]
+            swapped=True
+    if (not swapped): sort_in_progress=False
+
+    #Review the intermediate results
+    print(in_lst)
+
+
+complete= datetime.datetime.now()
+print("Completed",complete)
+print( "Bubble Sorted result", in_lst)
+print ("# of elements :",l,", # of iteration",test_loop_cnt, " and time taken " , complete - start)
